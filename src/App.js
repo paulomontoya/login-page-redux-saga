@@ -1,19 +1,22 @@
 import React from "react";
 import css from "./App.module.scss";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import { Provider } from "react-redux";
-import store from "./store";
+import { ConnectedRouter } from "connected-react-router";
+import store, { history } from "./store";
+import DashboardPage from "./components/DashboardPage";
 
 function App() {
   return (
     <div className={css.App}>
       <Provider store={store}>
-        <Router>
+        <ConnectedRouter history={history}>
           <Switch>
-            <Route path="/" component={LoginPage} />
+            <Route path="/" exact={true} component={LoginPage} />
+            <Route path="/dashboard" component={DashboardPage} />
           </Switch>
-        </Router>
+        </ConnectedRouter>
       </Provider>
     </div>
   );
