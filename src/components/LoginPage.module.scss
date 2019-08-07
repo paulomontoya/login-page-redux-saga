@@ -12,6 +12,7 @@
 
   h1 {
     text-transform: uppercase;
+    text-align: center;
     margin-top: 0;
   }
 
@@ -55,4 +56,16 @@
       }
     }
   }
+}
+
+.FormWrapper {
+  position: relative;
+  width: 290px;
+  height: 300px;
+  margin: 0 auto;
+}
+.FormLoadingWrapper {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
 }
